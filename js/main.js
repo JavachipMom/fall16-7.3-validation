@@ -13,7 +13,7 @@ export default React.createClass({
     })
   },
   getInitialState(){
-    // url: `https://tiny-tiny.herokuapp.com/collections/sa_tech_userdata_test3/${this.props.params.userID}`
+
     return{
       isEmailValid: false
     }
@@ -25,17 +25,26 @@ export default React.createClass({
 
   },
   onEmailChange(e){
-    // Set the state of emailText to value of email input
-    // var emailInputValue =
+    // Returning True or False upon validation of text from input.
     var isEmail = Validator.isEmail(e.target.value);
+    // This property of 'isEmailvalid' inside of state changes based on the
+    // isEmail variable.  
     this.setState({isEmailValid:isEmail})
   },
+  // Store data
+  onSubmit(e){
+    // on submit we want to prevent the page from refreshing
+    e.preventDefault()
+    // Get the Data
+    // Send Data somewhere
+  },
+
   render() {
     return(
       <section>
         <form className={this.state.isEmailValid ? "valid" : "invalid"}>
           <input type="email" onChange={this.onEmailChange} />
-          <input type="submit"/>
+          <input type="submit" onSubmit={this.onSubmit} />
         </form>
       </section>
     )
