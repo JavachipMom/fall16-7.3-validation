@@ -13,7 +13,6 @@ export default React.createClass({
     })
   },
   getInitialState(){
-
     return{
       isEmailValid: false
     }
@@ -22,13 +21,13 @@ export default React.createClass({
     console.log(response);
   },
   onAjaxLoadError(response){
-
+    // @TODO: Handle error...
   },
   onEmailChange(e){
     // Returning True or False upon validation of text from input.
     var isEmail = Validator.isEmail(e.target.value);
     // This property of 'isEmailvalid' inside of state changes based on the
-    // isEmail variable.  
+    // isEmail variable.
     this.setState({isEmailValid:isEmail})
   },
   // Store data
@@ -38,7 +37,6 @@ export default React.createClass({
     // Get the Data
     // Send Data somewhere
   },
-
   render() {
     return(
       <section>
