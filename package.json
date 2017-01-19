@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "jasmine": "^2.5.2",
-    "jsdom": "^9.9.1"
+    "jsdom": "^9.9.1",
+    "validator": "^6.2.1"
   }
 }
